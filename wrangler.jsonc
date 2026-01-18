@@ -1,0 +1,8 @@
+{
+    "preview_urls": false,
+    "name": "bad-ui-battles",
+    "compatibility_date": "2026-01-18",
+    "assets": {
+        "directory": "./dist",
+    },
+}
