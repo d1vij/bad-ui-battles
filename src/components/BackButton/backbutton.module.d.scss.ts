@@ -1,4 +1,4 @@
 declare const classNames: {
-  readonly backbutton: "backbutton";
+    readonly backbutton: "backbutton";
 };
 export default classNames;

@@ -22,5 +22,18 @@ export default defineConfig(() => ({
                 plugins: [["babel-plugin-react-compiler"]],
             },
         }),
+        {
+            name: "build-uuid-generator",
+
+            generateBundle() {
+                const uuid = crypto.randomUUID();
+
+                this.emitFile({
+                    type: "asset",
+                    fileName: "build.txt",
+                    source: uuid,
+                });
+            },
+        },
     ],
 }));

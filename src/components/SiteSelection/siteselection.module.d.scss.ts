@@ -1,4 +1,4 @@
 declare const classNames: {
-  readonly siteselection: "siteselection";
+    readonly siteselection: "siteselection";
 };
 export default classNames;

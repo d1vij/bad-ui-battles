@@ -1,4 +1,4 @@
 declare const classNames: {
-  readonly loadsite: "loadsite";
+    readonly loadsite: "loadsite";
 };
 export default classNames;
