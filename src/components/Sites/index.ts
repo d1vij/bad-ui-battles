@@ -1,6 +1,8 @@
 import { generateId } from "@/lib";
 import type { TSite } from "../Site/types";
+
 import BirthdaySelector from "./BirthdaySelector";
+import TermsOfServiceLoader from "./TermsOfService";
 
 const siteInfo: TSite[] = [
     {
@@ -8,6 +10,12 @@ const siteInfo: TSite[] = [
         title: "Birthday Selector",
         description: "Binary search your birthday",
         component: BirthdaySelector,
+    },
+    {
+        id: generateId(),
+        title: "Terms of Service",
+        description: "We ain't take no liability",
+        component: TermsOfServiceLoader,
     },
 ];
 

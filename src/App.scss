@@ -1,5 +1,11 @@
 @use "@/styles/colors" as c;
 
+@each $color in RED, BLUE, GREEN, PINK, YELLOW {
+    .DEBUG_#{$color} {
+        background-color: $color;
+    }
+}
+
 #root {
     min-height: 100vh;
     /* height: fit-content; */

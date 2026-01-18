@@ -1,3 +1,3 @@
-export type FooterTypes = {
-    children: React.ReactNode;
-};
+import type { PropsWithChildren } from "@/types";
+
+export type FooterTypes = PropsWithChildren;
