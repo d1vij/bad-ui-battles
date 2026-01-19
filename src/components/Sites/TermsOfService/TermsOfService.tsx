@@ -7,7 +7,17 @@ export type TermsOfServiceProps = {
 };
 
 export default function TermsOfServiceLoader() {
-    return <TermsOfService tos="ar BazFoo Bar Baz" />;
+    return (
+        <TermsOfService
+            tos="By using this service, you agree that you are legally, emotionally, and spiritually prepared for whatever happens next.
+            You acknowledge that the service may change at any time, including but not limited to changing its purpose, personality, or
+            favorite color. Continued use constitutes acceptance of all current, future, and hypothetical terms, including those that have
+            not yet been written or are only understood by the service on a metaphysical level. We provide this service “as is,” “as was,”
+            and “as might someday be.” We are not responsible for lost data, lost time, lost motivation, or sudden urges to refactor our
+            entire codebase at 2 a.m. By agreeing to these terms, you waive all rights, claims, and reasonable expectations, and you consent
+            to us doing absolutely nothing in response to any issue, complaint, or strongly worded email. "
+        />
+    );
 }
 
 export function TermsOfService({ tos }: TermsOfServiceProps) {
@@ -28,17 +38,17 @@ export function TermsOfService({ tos }: TermsOfServiceProps) {
 
     return (
         <div className="relative flex h-full w-full items-center justify-center bg-zinc-100 p-3 font-serif">
-            <div className="mb-20 h-[70%] max-w-120 rounded-3xl border-2 border-stone-400/80 bg-zinc-300 p-4">
+            <div className="mb-20 h-[70%] w-120 rounded-3xl border-2 border-stone-400/80 bg-zinc-300 p-4">
                 {activeModal === "success" && <SuccessModal setActiveModal={setActiveModal} />}
                 {activeModal === "faliure" && <FaliureModal setActiveModal={setActiveModal} />}
 
                 <div
                     className="flex h-full flex-col rounded-3xl border-2 border-stone-400/10 bg-stone-200 p-2 shadow-xl"
                 >
-                    <h1 className="text-3xl font-semibold tracking-tight text-shadow-black md:text-4xl">
+                    <h1 className="ml-1 text-3xl font-semibold tracking-tight text-shadow-black md:text-4xl">
                         Terms of Service
                     </h1>
-                    <h2 className="text-sm font-medium">Please read the agreement carefully before proceeding</h2>
+                    <h2 className="ml-1 text-sm font-medium">Please read the agreement carefully before proceeding</h2>
 
                     {/*tos checkboxes*/}
                     <section
@@ -54,8 +64,8 @@ export function TermsOfService({ tos }: TermsOfServiceProps) {
                     </div>
                     <button
                         onClick={handleSubmit}
-                        className="mx-auto w-fit cursor-pointer rounded-3xl border-2 border-zinc-500/20 bg-zinc-400 p-2
-                            text-lg inset-shadow-zinc-700/30 active:inset-shadow-sm"
+                        className="mx-auto mt-1 w-fit cursor-pointer rounded-3xl border-2 border-zinc-500/20 bg-zinc-300
+                            p-2 text-lg inset-shadow-zinc-700/30 active:inset-shadow-sm"
                     >
                         I Agree
                     </button>
@@ -121,18 +131,19 @@ function Modal({ title, children, setActiveModal }: AbstractModalProps) {
                     shadow-sm shadow-stone-400"
             >
                 <div
-                    className="flex size-full flex-col items-center justify-center rounded-3xl border-2
+                    className="relative flex size-full flex-col items-center justify-center rounded-3xl border-2
                         border-stone-400/10 bg-stone-300 text-stone-800 shadow-sm shadow-stone-400"
                 >
-                    <h1 className="mt-2 mb-3 text-center text-5xl font-semibold uppercase">{title}</h1>
-                    <div className="text-center text-xl">{children}</div>
                     <button
                         onClick={handleClick}
-                        className="mt-1 w-fit cursor-pointer rounded-3xl border-2 border-zinc-500/20 bg-zinc-400 p-2
-                            px-3 text-lg inset-shadow-zinc-700/30 active:inset-shadow-sm"
+                        className="absolute top-0 right-0.5 mt-1 flex size-8 cursor-pointer items-center justify-center
+                            rounded-4xl border-2 border-zinc-500/20 bg-zinc-300 p-2 px-3 text-lg
+                            inset-shadow-zinc-700/30 active:inset-shadow-sm"
                     >
-                        Close
+                        ⤫
                     </button>
+                    <h1 className="mt-2 mb-3 text-center text-5xl font-semibold uppercase">{title}</h1>
+                    <div className="text-center text-xl">{children}</div>
                 </div>
             </div>
         </div>
