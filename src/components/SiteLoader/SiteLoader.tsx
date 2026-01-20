@@ -19,17 +19,18 @@ export default function SiteLoader({ id, setActiveSite }: SiteLoaderProps) {
     return (
         <>
             <BackButton setActiveSite={setActiveSite} />
-            <div
-                // Lmao idk why h-1 works here
-                className={`siteContainer border-pop-black relative m-1 mt-4 flex h-1 grow overflow-clip rounded
-                    border-3 bg-red-500`}
-            >
-                <site.component />
+            <div className="flex h-10 grow flex-col justify-between">
+                <div
+                    // Lmao idk why h-1 works here
+                    className={"border-pop-black relative m-1 mt-4 h-1 grow overflow-clip rounded border-3 bg-red-500"}
+                >
+                    <site.component />
+                </div>
+                <Footer>
+                    <SiteFooter title={site.title} />
+                    <FooterGithubLink />
+                </Footer>
             </div>
-            <Footer>
-                <SiteFooter title={site.title} />
-                <FooterGithubLink />
-            </Footer>
         </>
     );
 }

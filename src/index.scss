@@ -3,7 +3,6 @@
 @import "@/tailwind.css";
 @import url("https://fonts.googleapis.com/css2?family=Gravitas+One&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 $primary_font: "Space Mono";
-
 @theme {
     --font-heading: "Gravitas One";
     --font-primary: #{$primary_font};
@@ -43,7 +42,13 @@ $primary_font: "Space Mono";
     overscroll-behavior: none;
 }
 
+html,body {
+    min-height: 100dvh
+}
 body {
     @apply font-primary;
     color: $color-pop-black;
+    background-color: #f3f3f3;
+    height: fit-content;
 }
+

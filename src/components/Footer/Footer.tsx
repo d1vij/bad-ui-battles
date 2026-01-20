@@ -14,8 +14,9 @@ export function FooterGithubLink() {
 export function FooterCredits() {
     return (
         <p className="">
-            Inspired by posts from
+            Inspired by posts
             <br className="block md:hidden" />
+            from
             <a className="ml-2 cursor-help underline" href="https://www.reddit.com/r/badUIbattles/" target="_blank">
                 r/badUIbattles
             </a>
@@ -30,9 +31,9 @@ export function SiteFooter({ title }: { title: string }) {
 export default function Footer({ children }: FooterTypes) {
     return (
         <>
-            <div className="mt-auto flex h-fit w-full grid-cols-3 justify-between p-1 text-lg text-zinc-700">
+            <footer className="z-20 flex h-fit w-full grid-cols-3 justify-between p-1 text-lg text-zinc-700">
                 {children}
-            </div>
+            </footer>
         </>
     );
 }
