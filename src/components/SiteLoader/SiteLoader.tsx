@@ -1,21 +1,15 @@
 import type { SiteLoaderProps } from "./types";
 
-import { Sites } from "@/components/Sites";
-import type { TSite } from "@/components/Site";
-
 import BackButton from "@/components/BackButton";
 import Footer, { SiteFooter, FooterGithubLink } from "@/components/Footer";
+import { useWindowTitle } from "@/hooks";
 
-function getSite(id: string): TSite | undefined {
-    return Sites.get(id);
-}
+// provides interface to mount and display any arbitrary component(s) within it
+export default function SiteLoader({ site, setActiveSite }: SiteLoaderProps) {
+    useWindowTitle(site.title);
 
-export default function SiteLoader({ id, setActiveSite }: SiteLoaderProps) {
-    const site = getSite(id);
-
-    if (site === undefined) {
-        return <div>Component not found</div>;
-    }
+    // SiteLoader's background is set to bright red, indicating that the embedded component is not utlizing the full available space
+    // this could be prevented by using an absolute wrapper around the loaded component, which acts as the background for it
     return (
         <>
             <BackButton setActiveSite={setActiveSite} />

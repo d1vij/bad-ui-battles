@@ -5,12 +5,19 @@ import { useState } from "react";
 import SiteSelection from "@/components/SiteSelection";
 import SiteLoader from "@/components/SiteLoader";
 
-export default function App() {
-    const [activeSite, setActiveSite] = useState<string | undefined>(undefined);
+import { Sites } from "@/components/Sites";
 
-    if (activeSite === undefined) {
-        return <SiteSelection setActiveSite={setActiveSite} />;
+export default function App() {
+    const [activeSiteId, setActiveSiteId] = useState<string | undefined>(undefined);
+
+    if (activeSiteId === undefined) {
+        return <SiteSelection setActiveSite={setActiveSiteId} />;
     } else {
-        return <SiteLoader id={activeSite} setActiveSite={setActiveSite} />;
+        const site = Sites.get(activeSiteId);
+
+        if (site === undefined) {
+            return <div>Component not found</div>;
+        }
+        return <SiteLoader site={site} setActiveSite={setActiveSiteId} />;
     }
 }
