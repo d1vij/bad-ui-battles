@@ -42,8 +42,9 @@ $primary_font: "Space Mono";
     overscroll-behavior: none;
 }
 
-html,body {
-    min-height: 100dvh
+html,
+body {
+    min-height: 100dvh;
 }
 body {
     @apply font-primary;
@@ -51,4 +52,3 @@ body {
     background-color: #f3f3f3;
     height: fit-content;
 }
-

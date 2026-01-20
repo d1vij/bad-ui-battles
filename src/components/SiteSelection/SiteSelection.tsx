@@ -16,7 +16,7 @@ export default function SiteSelection({ setActiveSite }: SiteSelectionProps) {
         <>
             <Screw className="absolute top-4 right-4" />
             <Titlebar title="bad UI battles" />
-            <div className="flex h-full flex-col justify-between grow">
+            <div className="flex h-full grow flex-col justify-between">
                 <div className={"mx-auto mt-0 grid w-[90%] grid-cols-1 gap-8 pb-18 md:grid-cols-2 lg:grid-cols-3"}>
                     {siteElms}
                 </div>

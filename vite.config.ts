@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     },
     base: mode === "production" ? "/bad-ui-battles" : "/",
     build: {
-        license: true
+        license: true,
     },
     resolve: {
         alias: {
