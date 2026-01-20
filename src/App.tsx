@@ -1,11 +1,11 @@
 // Created 2026-01-17 17:47:06+0530
-import "./App.scss";
+import "@/styles/App.scss";
 
 import { useState } from "react";
 import SiteSelection from "@/components/SiteSelection";
 import SiteLoader from "@/components/SiteLoader";
 
-import { Sites } from "@/components/Sites";
+import { SiteIndex } from "@/components/Sites";
 
 export default function App() {
     const [activeSiteId, setActiveSiteId] = useState<string | undefined>(undefined);
@@ -13,7 +13,7 @@ export default function App() {
     if (activeSiteId === undefined) {
         return <SiteSelection setActiveSite={setActiveSiteId} />;
     } else {
-        const site = Sites.get(activeSiteId);
+        const site = SiteIndex.get(activeSiteId);
 
         if (site === undefined) {
             return <div>Component not found</div>;

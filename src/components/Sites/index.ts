@@ -12,7 +12,55 @@ const siteInfo: TSite[] = [
     {
         id: generateId(),
         title: "Birthday Guesser",
-        description: "Guessing your birthday in O(log N) time",
+        description: "Guessing your birthday in \nO(logN) time",
+        component: BirthdaySelector,
+    },
+    {
+        id: generateId(),
+        title: "Terms of Service",
+        description: "We ain't take no liability",
+        component: TermsOfServiceLoader,
+    },
+    {
+        id: generateId(),
+        title: "QR Code Scanner",
+        description: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        component: QRCodeScanner,
+    },
+    {
+        id: generateId(),
+        title: "Passwordle",
+        description: "Six tries at once, Once a day",
+        component: Passwordle,
+    },
+    {
+        id: generateId(),
+        title: "Birthday Guesser",
+        description: "Guessing your birthday in \nO(logN) time",
+        component: BirthdaySelector,
+    },
+    {
+        id: generateId(),
+        title: "Terms of Service",
+        description: "We ain't take no liability",
+        component: TermsOfServiceLoader,
+    },
+    {
+        id: generateId(),
+        title: "QR Code Scanner",
+        description: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        component: QRCodeScanner,
+    },
+    {
+        id: generateId(),
+        title: "Passwordle",
+        description: "Six tries at once, Once a day",
+        component: Passwordle,
+    },
+    {
+        id: generateId(),
+        title: "Birthday Guesser",
+        description: "Guessing your birthday in \nO(logN) time",
         component: BirthdaySelector,
     },
     {
@@ -35,4 +83,4 @@ const siteInfo: TSite[] = [
     },
 ];
 
-export const Sites = new Map<string, TSite>(siteInfo.map((s) => [generateId(), s]));
+export const SiteIndex = new Map<string, TSite>(siteInfo.map((s) => [generateId(), s]));

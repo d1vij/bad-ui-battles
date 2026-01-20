@@ -4,15 +4,15 @@
     }
 }
 @keyframes fallthrough {
-    /* 100% {
+    100% {
         transform: translateY(100vh);
-    } */
+    }
 }
 
 .fall {
     transform-origin: center;
     animation-name: rotate, fallthrough;
-    animation-duration: 500ms, 1s;
+    animation-duration: 250ms, 1s;
     animation-iteration-count: 10, 1;
     animation-timing-function: linear, linear;
     animation-composition: accumlate;

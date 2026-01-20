@@ -1,6 +1,6 @@
 import type { SiteSelectionProps } from "./types";
 import Site from "@/components/Site";
-import { Sites } from "@/components/Sites";
+import { SiteIndex } from "@/components/Sites";
 import Titlebar from "@/components/Titlebar";
 import Screw from "@/components/Screw";
 import Footer, { FooterCredits, FooterGithubLink } from "@/components/Footer";
@@ -8,7 +8,7 @@ import Footer, { FooterCredits, FooterGithubLink } from "@/components/Footer";
 export default function SiteSelection({ setActiveSite }: SiteSelectionProps) {
     const siteElms: React.ReactElement[] = [];
 
-    Sites.forEach((s, id) => {
+    SiteIndex.forEach((s, id) => {
         siteElms.push(<Site {...s} key={id} id={id} setActiveSite={setActiveSite} />);
     });
 
@@ -17,7 +17,11 @@ export default function SiteSelection({ setActiveSite }: SiteSelectionProps) {
             <Screw className="absolute top-4 right-4" />
             <Titlebar title="bad UI battles" />
             <div className="flex h-full grow flex-col justify-between">
-                <div className={"mx-auto mt-0 grid w-[90%] grid-cols-1 gap-8 pb-18 md:grid-cols-2 lg:grid-cols-3"}>
+                <div
+                    className={
+                        "mx-auto mt-0 grid w-[90%] grid-cols-1 gap-8 pb-18 md:grid-cols-2 lg:w-[80%] lg:grid-cols-3"
+                    }
+                >
                     {siteElms}
                 </div>
                 {/*<Screw className="absolute top-4 left-4" />*/}

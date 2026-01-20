@@ -1,6 +1,6 @@
 /* referencing loaded tailwindcss */
 @use "@/styles/colors" as *;
-@import "@/tailwind.css";
+@import "@/styles/tailwind.css";
 @import url("https://fonts.googleapis.com/css2?family=Gravitas+One&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 $primary_font: "Space Mono";
 @theme {
