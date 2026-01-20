@@ -1,4 +1,4 @@
-import{i as e,r as t,t as n}from"./index-Dk2c68QP.js";var r=t(),i=e(),a=n();function o(){let e=(0,r.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,a.jsx)(s,{tos:`By using this service, you agree that you are legally, emotionally, and spiritually prepared for whatever happens next.
+import{i as e,r as t,t as n}from"./index-BCh4Xhej.js";var r=t(),i=e(),a=n();function o(){let e=(0,r.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,a.jsx)(s,{tos:`By using this service, you agree that you are legally, emotionally, and spiritually prepared for whatever happens next.
             You acknowledge that the service may change at any time, including but not limited to changing its purpose, personality, or
             favorite color. Continued use constitutes acceptance of all current, future, and hypothetical terms, including those that have
             not yet been written or are only understood by the service on a metaphysical level. We provide this service “as is,” “as was,”
