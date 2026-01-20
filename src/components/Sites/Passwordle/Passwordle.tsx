@@ -1,7 +1,7 @@
-import styles from "./passwordle.module.scss";
-
+// https://www.reddit.com/r/badUIbattles/comments/txn7na/it_came_to_me_in_a_fever_dream_passwordle/
 import { useReducer, useState } from "react";
 
+import styles from "./passwordle.module.scss";
 import KeyBoard from "./Keyboard";
 import { KeyAction } from "./constants";
 import { getRandomPassword } from "./getRandomPassword";

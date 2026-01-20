@@ -1,15 +1,18 @@
+import React from "react";
 import { generateId } from "@/lib";
 import type { TSite } from "../Site/types";
 
-import BirthdaySelector from "./BirthdaySelector";
-import TermsOfServiceLoader from "./TermsOfService";
-import Passwordle from "./Passwordle/";
+// import BirthdaySelector from "./BirthdaySelector";
+const BirthdaySelector = React.lazy(() => import("./BirthdaySelector"));
+const TermsOfServiceLoader = React.lazy(() => import("./TermsOfService"));
+const Passwordle = React.lazy(() => import("./Passwordle/"));
+const QRCodeScanner = React.lazy(() => import("./QRCodeScanner/"));
 
 const siteInfo: TSite[] = [
     {
         id: generateId(),
-        title: "Birthday Selector",
-        description: "Binary search your birthday",
+        title: "Birthday Guesser",
+        description: "Guessing your birthday in O(log N) time",
         component: BirthdaySelector,
     },
     {
@@ -17,6 +20,12 @@ const siteInfo: TSite[] = [
         title: "Terms of Service",
         description: "We ain't take no liability",
         component: TermsOfServiceLoader,
+    },
+    {
+        id: generateId(),
+        title: "QR Code Scanner",
+        description: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        component: QRCodeScanner,
     },
     {
         id: generateId(),

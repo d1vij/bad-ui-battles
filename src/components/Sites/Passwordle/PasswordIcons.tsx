@@ -27,7 +27,7 @@ function Icon({ state }: IconProps) {
                 " " +
                 styles.passwordIcon +
                 " " +
-                "ext-lg flex size-4.5 items-center justify-center border-t-2 border-b-2 border-transparent select-none"
+                "text-lg flex size-4.5 items-center justify-center border-t-2 border-b-2 border-transparent select-none"
             }
         >
             {""}

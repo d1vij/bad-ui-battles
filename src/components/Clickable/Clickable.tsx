@@ -2,9 +2,9 @@ import { useVibrate } from "@/hooks";
 import type { ClickableProps } from "./types";
 
 export default function Clickable({ children, handleClick }: ClickableProps) {
-    const vibrator = useVibrate()
+    const vibrator = useVibrate();
     function onClick() {
-        vibrator(100)
+        vibrator(100);
         setTimeout(() => handleClick(), 200);
     }
     return (
