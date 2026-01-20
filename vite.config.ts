@@ -5,9 +5,13 @@ import sassDts from "vite-plugin-sass-dts";
 import path from "path";
 
 // https://vite.dev/config/
-export default defineConfig(() => ({
+export default defineConfig(({ mode }) => ({
     server: {
         allowedHosts: true,
+    },
+    base: mode === "production" ? "/bad-ui-battles" : "/",
+    build: {
+        license: true
     },
     resolve: {
         alias: {
