@@ -8,6 +8,8 @@ const vibrator: VibrateFn =
               return false;
           };
 
+// Hook which enables vibration if browser
+// supports vibration otherwise does nothing
 export function useVibrate() {
     return vibrator;
 }
