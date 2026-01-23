@@ -16,7 +16,7 @@ export default function SiteLoader({ site, setActiveSite }: SiteLoaderProps) {
             <div className="flex h-10 grow flex-col justify-between">
                 <div
                     // Lmao idk why h-1 works here
-                    className={"border-pop-black relative m-1 mt-4 h-1 grow overflow-clip rounded border-3 bg-red-500"}
+                    className={"border-pop-black relative m-2 mt-4 h-1 grow overflow-clip rounded border-3 bg-red-500"}
                 >
                     <site.component />
                 </div>

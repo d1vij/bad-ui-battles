@@ -10,7 +10,7 @@ export default function Site({ description, title, id, setActiveSite }: SiteProp
         <Clickable handleClick={handleClick}>
             <div className="px-1">
                 <div className="text-3xl md:text-5xl">{title}</div>
-                <div className="text-xl">{description}</div>
+                <div className="text-xl wrap-break-word">{description}</div>
             </div>
         </Clickable>
     );

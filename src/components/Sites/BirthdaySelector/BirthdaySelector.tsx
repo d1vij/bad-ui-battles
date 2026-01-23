@@ -1,16 +1,23 @@
 import { useRef, useState, useEffect } from "react";
 
-import { generateClassname } from "@/lib";
+import { gc } from "@/lib";
+import { useVibrate } from "@/hooks";
 
 function DateComponent({ date }: { date: string }) {
     return <p>{date}</p>;
 }
 
-function Button({ label, handleClick }: { label: string; handleClick: VoidFunction }) {
+function Button({ label, onClick }: { label: string; onClick: VoidFunction }) {
+    const vibrator = useVibrate();
+    function handleClick() {
+        vibrator(100);
+        onClick();
+    }
     return (
         <button
             onClick={handleClick}
-            className="solid mb-1 w-25 cursor-pointer rounded-md border-2 border-zinc-600 bg-zinc-300 p-1 text-xl"
+            className="solid text-md mb-1 h-fit w-fit min-w-15 cursor-pointer rounded-md border-2 border-zinc-600 active:shadow
+                bg-zinc-300 p-1 md:text-xl"
         >
             {label}
         </button>
@@ -28,7 +35,7 @@ function DateSection({
 }) {
     return (
         <div className="flex h-65 w-full flex-col items-center justify-baseline md:h-85">
-            <Button label={label} handleClick={handleClick} />
+            <Button label={label} onClick={handleClick} />
             <ul className="overflow-hidden md:text-lg">{children}</ul>
         </div>
     );
@@ -112,26 +119,29 @@ export default function BirthdaySelector() {
         setGuesses((g) => g + 1);
     }
 
-    function handleSubmit() {
-        alert("yay!!!");
+    function handleReset() {
         setEarlierDates([]);
         setLaterDates([]);
         setGuesses(1);
+        updateDates("reset");
+    }
+
+    function handleSubmit() {
+        handleReset();
+        setTimeout(() => {
+            alert("yay!!!");
+        });
     }
 
     return (
         <div className="h-full w-full bg-[hsl(0,0%,93%)]">
             <div
-                className={generateClassname(
-                    `mx-auto flex h-full w-[90%] flex-col items-center justify-center font-mono text-gray-800
-                    select-none md:w-[60%]`,
+                className={gc(
+                    `mx-auto flex h-full w-[70%] flex-col items-center justify-center font-mono text-gray-800
+                    select-none md:w-[50%]`,
                 )}
             >
-                <h1
-                    className={generateClassname(
-                        "mb-3 text-center font-mono text-2xl font-bold tracking-wider md:text-4xl",
-                    )}
-                >
+                <h1 className={gc("mb-3 text-center font-mono text-2xl font-bold tracking-wider md:text-4xl")}>
                     Is this your birthday??
                 </h1>
                 {/*Current Date*/}
@@ -144,23 +154,22 @@ export default function BirthdaySelector() {
                     </p>
                     <p className="mt-1 text-xl">Guesses {guesses}</p>
                 </div>
-                <section
-                    className={generateClassname(
-                        "content",
-                        "grid w-full grid-cols-2 justify-items-center align-middle",
-                    )}
-                >
+                <section className={gc("grid w-full grid-cols-3 justify-items-center align-middle")}>
                     {/*Earlier dates*/}
                     <DateSection label="Earlier" handleClick={updateEarlierDates}>
                         {earlierDateElms}
                     </DateSection>
+                    <div className="text-center">
+                        <Button label="Yes" onClick={handleSubmit} />
+                        <button onClick={handleReset} className="mx-auto block">
+                            <p className="cursor-pointer hover:underline active:underline">reset</p>
+                        </button>
+                    </div>
                     {/*Later dates*/}
                     <DateSection label="Later" handleClick={updateLaterDates}>
                         {laterDateElms}
                     </DateSection>
                 </section>
-
-                <Button label="Submit" handleClick={handleSubmit} />
             </div>
         </div>
     );

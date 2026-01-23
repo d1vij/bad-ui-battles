@@ -9,7 +9,7 @@ export default function Clickable({ children, handleClick }: ClickableProps) {
     }
     return (
         <div
-            className="border-pop-black relative m-1 min-h-fit cursor-pointer select-none active:shadow-2xl"
+            className="border-pop-black relative m-2 min-h-fit cursor-pointer select-none active:shadow-2xl"
             onClick={onClick}
         >
             <div
@@ -17,8 +17,8 @@ export default function Clickable({ children, handleClick }: ClickableProps) {
                     bg-gray-700`}
             ></div>
             <div
-                className="bg-pop-skin relative z-20 h-full border-3 p-1 transition-transform duration-150 ease-out
-                    active:translate-y-3 active:rounded-b"
+                className="bg-pop-skin relative z-20 h-full border-3 p-1 transition-transform duration-100 ease-in
+                    active:translate-y-3 active:rounded-b lg:duration-150"
             >
                 {children}
             </div>
