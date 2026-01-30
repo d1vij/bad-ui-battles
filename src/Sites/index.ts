@@ -1,6 +1,6 @@
 import React from "react";
 import { generateId } from "@/lib";
-import type { TSite } from "../Site/types";
+import type { TSite } from "@/components/Site/types";
 
 // import BirthdaySelector from "./BirthdaySelector";
 const BirthdaySelector = React.lazy(() => import("./BirthdaySelector"));

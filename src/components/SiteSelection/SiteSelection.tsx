@@ -1,6 +1,6 @@
 import type { SiteSelectionProps } from "./types";
 import Site from "@/components/Site";
-import { SiteIndex } from "@/components/Sites";
+import { SiteIndex } from "@/Sites";
 import Titlebar from "@/components/Titlebar";
 import Screw from "@/components/Screw";
 import Footer, { FooterCredits, FooterGithubLink } from "@/components/Footer";
