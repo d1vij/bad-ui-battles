@@ -11,8 +11,9 @@ const keyboardLayout = [
 ];
 
 type KeyboardRowProps = PropsWithChildren;
+
 function KeyboardRow({ children }: KeyboardRowProps) {
-    return <div className="flex items-center justify-center">{children}</div>;
+        return <div className="flex  flex-row justify-center items-center w-full grow">{children}</div>;
 }
 
 type KeyboardKeyProps = {
@@ -26,10 +27,12 @@ export function KeyboardKey({ letter, onClick }: KeyboardKeyProps) {
         onClick();
     }
 
-    return (
-        <button
+    return ( <button
+        //     className="m-1 mx-0.5  justify-center flex min-w-10 -square cursor-pointer items-center rounded bg-[#818384] p-3 px-1 text-xs
+        //         font-semibold tracking-wide uppercase select-none active:bg-[hsl(from_#818384_h_s_40)] md:p-4 md:px-3.5"
+        // >
             onClick={handleClick}
-            className="m-1 mx-0.5 flex w-fit cursor-pointer items-center rounded bg-[#818384] p-3.5 px-3 text-sm
+            className="m-1 mx-0.5  justify-center h-fit flex grow md:grow-0 cursor-pointer items-center rounded bg-[#818384] p-2 px-1.5 text-sm
                 font-semibold tracking-wide uppercase select-none active:bg-[hsl(from_#818384_h_s_40)] md:p-4 md:px-3.5"
         >
             {letter}
@@ -43,7 +46,7 @@ type KeyboardProps = {
 
 export default function KeyBoard({ dispatchInput }: KeyboardProps) {
     return (
-        <div>
+        <div className="flex flex-col w-full px-[2%] md:px-0">
             <KeyboardRow>
                 {keyboardLayout[0].map((l, i) => (
                     <KeyboardKey

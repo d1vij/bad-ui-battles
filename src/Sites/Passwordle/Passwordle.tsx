@@ -36,9 +36,10 @@ export default function Passwordle() {
                 "absolute top-0 left-0 flex size-full items-center justify-center bg-[#121213] text-[#f8f8f8]"
             }
         >
-            <div className="mt-30 flex flex-col items-center">
-                <div className="flex w-[70%] flex-col justify-center">
-                    {/*password*/}
+            <div className="mt-30 w-full md:w-fit flex flex-col items-center">
+
+                {/*password*/}
+                <div className="flex  w-[70%] flex-col justify-center">
                     <div
                         className="flex h-18 w-full items-center overflow-x-scroll overflow-y-hidden rounded border-3
                             border-[#3a3a3c] p-2 px-3 text-3xl text-nowrap"
