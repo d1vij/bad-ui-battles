@@ -16,13 +16,12 @@ export default function QRCodeScanner() {
             </h1>
             <div className="relative">
                 <div
-                    className={"border-pop-black grid grid-cols-20 size-80 grid-rows-20 gap-0 overflow-clip rounded-md border-2"}
+                    className={`border-pop-black grid size-80 grid-cols-20 grid-rows-20 gap-0 overflow-clip rounded-md
+                        border-2`}
                 >
                     {cells}
                 </div>
-                <p className="absolute right-2">
-                    20 x 20
-                </p>
+                <p className="absolute right-2">20 x 20</p>
             </div>
             <p className="absolute right-2 bottom-0">Powered by our Smartest AI™</p>
         </div>

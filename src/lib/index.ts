@@ -18,4 +18,4 @@
  */
 
 export { generateId } from "./generateId";
-export { gc} from "./generateClassname";
+export { gc } from "./generateClassname";

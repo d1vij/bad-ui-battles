@@ -16,8 +16,8 @@ function Button({ label, onClick }: { label: string; onClick: VoidFunction }) {
     return (
         <button
             onClick={handleClick}
-            className="solid text-md mb-1 h-fit w-fit min-w-15 cursor-pointer rounded-md border-2 border-zinc-600 active:shadow
-                bg-zinc-300 p-1 md:text-xl"
+            className="solid text-md mb-1 h-fit w-fit min-w-15 cursor-pointer rounded-md border-2 border-zinc-600
+                bg-zinc-300 p-1 active:shadow md:text-xl"
         >
             {label}
         </button>
