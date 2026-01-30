@@ -3,6 +3,9 @@ import type { SiteLoaderProps } from "./types";
 import BackButton from "@/components/BackButton";
 import Footer, { SiteFooter, FooterGithubLink } from "@/components/Footer";
 import { useWindowTitle } from "@/hooks";
+import { Suspense } from "react";
+
+import Placeholder from "@/components/Placeholder";
 
 // provides interface to mount and display any arbitrary component(s) within it
 export default function SiteLoader({ site, setActiveSite }: SiteLoaderProps) {
@@ -18,7 +21,9 @@ export default function SiteLoader({ site, setActiveSite }: SiteLoaderProps) {
                     // Lmao idk why h-1 works here
                     className={"border-pop-black relative m-2 mt-4 h-1 grow overflow-clip rounded border-3 bg-red-500"}
                 >
-                    <site.component />
+                    <Suspense fallback={ <Placeholder/> }>
+                        <site.component />
+                    </Suspense>
                 </div>
                 <Footer>
                     <SiteFooter title={site.title} />

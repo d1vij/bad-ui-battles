@@ -8,6 +8,7 @@ const TermsOfServiceLoader = React.lazy(() => import("./TermsOfService"));
 const Passwordle = React.lazy(() => import("./Passwordle/"));
 const QRCodeScanner = React.lazy(() => import("./QRCodeScanner/"));
 
+
 const siteInfo: TSite[] = [
     {
         id: generateId(),
