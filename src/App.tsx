@@ -5,7 +5,7 @@ import { useState } from "react";
 import SiteSelection from "@/components/SiteSelection";
 import SiteLoader from "@/components/SiteLoader";
 
-import { SiteIndex } from "@/Sites";
+import { SiteIndex } from "@/sites";
 
 export default function App() {
     const [activeSiteId, setActiveSiteId] = useState<string | undefined>(undefined);
