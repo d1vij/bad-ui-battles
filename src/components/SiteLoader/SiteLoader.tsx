@@ -21,7 +21,7 @@ export default function SiteLoader({ site, setActiveSite }: SiteLoaderProps) {
                     // Lmao idk why h-1 works here
                     className={"border-pop-black relative m-2 mt-4 h-1 grow overflow-clip rounded border-3 bg-red-500"}
                 >
-                    <Suspense fallback={ <Placeholder/> }>
+                    <Suspense fallback={<Placeholder />}>
                         <site.component />
                     </Suspense>
                 </div>

@@ -1,10 +1,9 @@
 type VibrateFn = (pattern: number | number[]) => boolean;
 
-
 let vibrator: VibrateFn;
 
 if ("vibrate" in navigator && typeof navigator.vibrate === "function") {
-    vibrator = (pattern) => navigator.vibrate(pattern)
+    vibrator = (pattern) => navigator.vibrate(pattern);
 } else {
     console.log("Your device doesn't support vibrations (╥﹏╥)");
     vibrator = () => false;

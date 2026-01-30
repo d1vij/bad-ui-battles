@@ -9,7 +9,7 @@ export default function Clickable({ children, handleClick }: ClickableProps) {
     }
     return (
         <button
-            className="border-pop-black relative m-2 text-start min-h-fit cursor-pointer select-none active:shadow-2xl"
+            className="border-pop-black relative m-2 min-h-fit cursor-pointer text-start select-none active:shadow-2xl"
             onClick={onClick}
         >
             <div
