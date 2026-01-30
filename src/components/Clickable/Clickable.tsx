@@ -8,8 +8,8 @@ export default function Clickable({ children, handleClick }: ClickableProps) {
         setTimeout(() => handleClick(), 200);
     }
     return (
-        <div
-            className="border-pop-black relative m-2 min-h-fit cursor-pointer select-none active:shadow-2xl"
+        <button
+            className="border-pop-black relative m-2 text-start min-h-fit cursor-pointer select-none active:shadow-2xl"
             onClick={onClick}
         >
             <div
@@ -22,6 +22,6 @@ export default function Clickable({ children, handleClick }: ClickableProps) {
             >
                 {children}
             </div>
-        </div>
+        </button>
     );
 }

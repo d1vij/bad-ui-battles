@@ -19,7 +19,7 @@ export default function SiteSelection({ setActiveSite }: SiteSelectionProps) {
             <div className="flex h-full grow flex-col justify-between">
                 <div
                     className={
-                        "mx-auto mt-0 grid w-[90%] grid-cols-1 gap-8 pb-18 md:grid-cols-2 lg:w-[80%] lg:grid-cols-3"
+                        "mx-auto mt-0 grid w-[90%] grid-cols-1 gap-4 md:gap-8 pb-18 md:grid-cols-2 lg:w-[80%] lg:grid-cols-3"
                     }
                 >
                     {siteElms}
