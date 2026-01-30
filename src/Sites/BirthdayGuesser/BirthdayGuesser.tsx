@@ -97,7 +97,7 @@ function useDateLogic(): [Date, (t: "earlier" | "later" | "reset") => void] {
     return [currDate, updateDates];
 }
 
-export default function BirthdaySelector() {
+export default function BirthdayGuesser() {
     const [guesses, setGuesses] = useState(1);
 
     const [currDate, updateDates] = useDateLogic();
@@ -134,11 +134,11 @@ export default function BirthdaySelector() {
     }
 
     return (
-        <div className="h-full w-full bg-[hsl(0,0%,93%)]">
+        <div className="h-full  w-full bg-[hsl(0,0%,93%)] overflow-scroll">
             <div
                 className={gc(
-                    `mx-auto flex h-full w-[70%] flex-col items-center justify-center font-mono text-gray-800
-                    select-none md:w-[50%]`,
+                    `mx-auto flex h-full w-[90%] flex-col items-center justify-center font-mono text-gray-800
+                    select-none lg:w-[30%] md:w-[50%]`,
                 )}
             >
                 <h1 className={gc("mb-3 text-center font-mono text-2xl font-bold tracking-wider md:text-4xl")}>
@@ -159,7 +159,7 @@ export default function BirthdaySelector() {
                     <DateSection label="Earlier" handleClick={updateEarlierDates}>
                         {earlierDateElms}
                     </DateSection>
-                    <div className="text-center">
+                    <div className="text-center ml-2 w-full">
                         <Button label="Yes" onClick={handleSubmit} />
                         <button onClick={handleReset} className="mx-auto block">
                             <p className="cursor-pointer hover:underline active:underline">reset</p>

@@ -3,7 +3,7 @@ import { generateId } from "@/lib";
 import type { TSite } from "@/components/Site/types";
 
 // import BirthdaySelector from "./BirthdaySelector";
-const BirthdaySelector = React.lazy(() => import("./BirthdaySelector"));
+const BirthdaySelector = React.lazy(() => import("./BirthdayGuesser"));
 const TermsOfServiceLoader = React.lazy(() => import("./TermsOfService"));
 const Passwordle = React.lazy(() => import("./Passwordle/"));
 const QRCodeScanner = React.lazy(() => import("./QRCodeScanner/"));
