@@ -42,8 +42,29 @@ function DateSection({
 }
 
 function getDateString(_date: Date) {
-    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const monthsShort = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const weekdays = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+    const monthsShort = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+    ];
 
     const day = weekdays[_date.getDay()];
     const date = _date.getDate();
@@ -141,7 +162,11 @@ export default function BirthdayGuesser() {
                     select-none md:w-[50%] lg:w-[30%]`,
                 )}
             >
-                <h1 className={gc("mb-3 text-center font-mono text-2xl font-bold tracking-wider md:text-4xl")}>
+                <h1
+                    className={gc(
+                        "mb-3 text-center font-mono text-2xl font-bold tracking-wider md:text-4xl",
+                    )}
+                >
                     Is this your birthday??
                 </h1>
                 {/*Current Date*/}
@@ -154,15 +179,24 @@ export default function BirthdayGuesser() {
                     </p>
                     <p className="mt-1 text-xl">Guesses {guesses}</p>
                 </div>
-                <section className={gc("grid w-full grid-cols-3 justify-items-center align-middle")}>
+                <section
+                    className={gc(
+                        "grid w-full grid-cols-3 justify-items-center align-middle",
+                    )}
+                >
                     {/*Earlier dates*/}
-                    <DateSection label="Earlier" handleClick={updateEarlierDates}>
+                    <DateSection
+                        label="Earlier"
+                        handleClick={updateEarlierDates}
+                    >
                         {earlierDateElms}
                     </DateSection>
                     <div className="ml-2 w-full text-center">
                         <Button label="Yes" onClick={handleSubmit} />
                         <button onClick={handleReset} className="mx-auto block">
-                            <p className="cursor-pointer hover:underline active:underline">reset</p>
+                            <p className="cursor-pointer hover:underline active:underline">
+                                reset
+                            </p>
                         </button>
                     </div>
                     {/*Later dates*/}

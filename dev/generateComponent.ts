@@ -39,7 +39,11 @@ function generateComponentStructure(componentName: string): Structure {
         // index.ts
         { nodeType: "file", name: `index.ts`, content: indexContent },
         // component file
-        { nodeType: "file", name: `${componentName}.tsx`, content: componentFileContent },
+        {
+            nodeType: "file",
+            name: `${componentName}.tsx`,
+            content: componentFileContent,
+        },
         // stylesheet
         {
             nodeType: "file",
@@ -78,7 +82,9 @@ function createFile(name: string, at: string, content: string) {
     const fpath = path.join(at, name);
     Logger.debug("Creating file at ", fpath);
     if (fs.existsSync(fpath)) {
-        throw new FileExistsError(`A file/folder already exists at ${chalk.blue(fpath)}`);
+        throw new FileExistsError(
+            `A file/folder already exists at ${chalk.blue(fpath)}`,
+        );
     }
 
     fs.writeFileSync(fpath, content, { encoding: "utf-8", flag: "w" });
@@ -126,10 +132,12 @@ function createComponent(componentName: string, componentRoot: string) {
 }
 
 function main() {
-    let componentName = readline.question("Name of component to generate: ").trim();
+    let componentName = readline
+        .question("Name of component to generate: ")
+        .trim();
     if (componentName.length === 0) {
         Logger.error("Component name cannot be blank!");
-        process.exit()
+        process.exit();
     }
 
     if (componentName.includes(" ")) {
@@ -138,11 +146,16 @@ function main() {
     }
 
     if (config.auto_title) {
-        componentName = componentName.charAt(0).toUpperCase() + componentName.slice(1);
+        componentName =
+            componentName.charAt(0).toUpperCase() + componentName.slice(1);
     }
     Logger.log("Creating a component with name ", chalk.blue(componentName));
 
-    const componentDir = path.join(process.cwd(), config.components_dir, componentName);
+    const componentDir = path.join(
+        process.cwd(),
+        config.components_dir,
+        componentName,
+    );
 
     // henceforth the presence of any subfolder/subfile
     // wont be checked since the root folder is created here

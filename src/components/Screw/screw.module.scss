@@ -1,20 +1,20 @@
 @keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes fallthrough {
-    100% {
-        transform: translateY(100vh);
-    }
+  100% {
+    transform: translateY(100vh);
+  }
 }
 
 .fall {
-    transform-origin: center;
-    animation-name: rotate, fallthrough;
-    animation-duration: 250ms, 1s;
-    animation-iteration-count: 10, 1;
-    animation-timing-function: linear, linear;
-    animation-composition: accumlate;
-    animation-fill-mode: forwards, forwards;
+  transform-origin: center;
+  animation-name: rotate, fallthrough;
+  animation-duration: 250ms, 1s;
+  animation-iteration-count: 10, 1;
+  animation-timing-function: linear, linear;
+  animation-composition: accumlate;
+  animation-fill-mode: forwards, forwards;
 }

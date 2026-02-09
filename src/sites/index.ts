@@ -7,6 +7,7 @@ const BirthdaySelector = React.lazy(() => import("./BirthdayGuesser"));
 const TermsOfServiceLoader = React.lazy(() => import("./TermsOfService"));
 const Passwordle = React.lazy(() => import("./Passwordle/"));
 const QRCodeScanner = React.lazy(() => import("./QRCodeScanner/"));
+const EtchACaptcha = React.lazy(() => import("./EtchACaptcha/"));
 
 const siteInfo: TSite[] = [
     {
@@ -23,6 +24,12 @@ const siteInfo: TSite[] = [
     },
     {
         id: generateId(),
+        title: "Etch-A-Captcha",
+        description: "Guessing your birthday in \nO(logN) time",
+        component: EtchACaptcha,
+    },
+    {
+        id: generateId(),
         title: "QR Code Scanner",
         description: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         component: QRCodeScanner,
@@ -35,4 +42,6 @@ const siteInfo: TSite[] = [
     },
 ];
 
-export const SiteIndex = new Map<string, TSite>(siteInfo.map((s) => [generateId(), s]));
+export const SiteIndex = new Map<string, TSite>(
+    siteInfo.map((s) => [generateId(), s]),
+);

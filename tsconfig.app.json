@@ -27,8 +27,8 @@
         "allowArbitraryExtensions": true, // For scss inference
         "baseUrl": ".", // For @/ prefix
         "paths": {
-            "@/*": ["src/*"],
-        },
+            "@/*": ["src/*"]
+        }
     },
-    "include": ["src", "tailwind.config.js"],
+    "include": ["src", "tailwind.config.js"]
 }

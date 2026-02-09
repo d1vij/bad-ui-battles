@@ -46,7 +46,10 @@ export default function Passwordle() {
                         {"* ".repeat(currentInput.length)}
                     </div>
                     {/*Icons*/}
-                    <PasswordIcons password={password} inputtedPassword={currentInput} />
+                    <PasswordIcons
+                        password={password}
+                        inputtedPassword={currentInput}
+                    />
                 </div>
                 {/*keyboard*/}
                 <KeyBoard dispatchInput={dispatchInput} />

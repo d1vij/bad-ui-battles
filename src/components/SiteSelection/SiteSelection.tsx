@@ -9,7 +9,9 @@ export default function SiteSelection({ setActiveSite }: SiteSelectionProps) {
     const siteElms: React.ReactElement[] = [];
 
     SiteIndex.forEach((s, id) => {
-        siteElms.push(<Site {...s} key={id} id={id} setActiveSite={setActiveSite} />);
+        siteElms.push(
+            <Site {...s} key={id} id={id} setActiveSite={setActiveSite} />,
+        );
     });
 
     return (

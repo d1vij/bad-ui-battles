@@ -4,51 +4,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Gravitas+One&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 $primary_font: "Space Mono";
 @theme {
-    --font-heading: "Gravitas One";
-    --font-primary: #{$primary_font};
+  --font-heading: "Gravitas One";
+  --font-primary: #{$primary_font};
 
-    //--color-pop-red: oklch(0.56 0.23 29); /* #E52320 – high-impact red */
-    //--color-pop-yellow: oklch(0.92 0.19 98); /* #FFDE17 – bright yellow */ //--color-pop-blue: oklch(0.34 0.09 255); /* #002D72 – deep blue */
-    //--color-pop-black: oklch(0.14 0.01 260); /* #0A0A0A – near-neutral black */
-    //--color-pop-skin: oklch(0.73 0.13 32); /* #F49080 – warm skin tone */
+  //--color-pop-red: oklch(0.56 0.23 29); /* #E52320 – high-impact red */
+  //--color-pop-yellow: oklch(0.92 0.19 98); /* #FFDE17 – bright yellow */ //--color-pop-blue: oklch(0.34 0.09 255); /* #002D72 – deep blue */
+  //--color-pop-black: oklch(0.14 0.01 260); /* #0A0A0A – near-neutral black */
+  //--color-pop-skin: oklch(0.73 0.13 32); /* #F49080 – warm skin tone */
 
-    --color-pop-yellow: #{$color-pop-yellow}; /* acid comic yellow */
-    --color-pop-red: #{$color-pop-red}; /* blood red */
-    --color-pop-blue: #{$color-pop-blue}; /* deep cobalt/navy */
-    --color-pop-black: #{$color-pop-black}; /* ink outline black */
-    --color-pop-skin: #{$color-pop-skin}; /* stylized skin tone */
+  --color-pop-yellow: #{$color-pop-yellow}; /* acid comic yellow */
+  --color-pop-red: #{$color-pop-red}; /* blood red */
+  --color-pop-blue: #{$color-pop-blue}; /* deep cobalt/navy */
+  --color-pop-black: #{$color-pop-black}; /* ink outline black */
+  --color-pop-skin: #{$color-pop-skin}; /* stylized skin tone */
 }
 
 /* globals.css */
 @layer utilities {
-    .text-stroke {
-        -webkit-text-stroke: 2px $color-pop-black;
-    }
+  .text-stroke {
+    -webkit-text-stroke: 2px $color-pop-black;
+  }
 
-    .text-stroke-1 {
-        -webkit-text-stroke: 1px black;
-    }
+  .text-stroke-1 {
+    -webkit-text-stroke: 1px black;
+  }
 
-    .text-stroke-white {
-        -webkit-text-stroke-color: white;
-    }
+  .text-stroke-white {
+    -webkit-text-stroke-color: white;
+  }
 }
 
 :root {
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overscroll-behavior: none;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
 }
 
 html,
 body {
-    min-height: 100dvh;
+  min-height: 100dvh;
 }
 body {
-    @apply font-primary;
-    color: $color-pop-black;
-    background-color: #f3f3f3;
-    height: fit-content;
+  @apply font-primary;
+  color: $color-pop-black;
+  background-color: #f3f3f3;
+  height: fit-content;
 }

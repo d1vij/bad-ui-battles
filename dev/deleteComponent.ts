@@ -14,7 +14,9 @@ function deleteComponent(name: string, rootDir: string) {
 
     if (
         readline
-            .question(`Is this path correct ${chalk.blue(componentDir)} [y/N] : `)
+            .question(
+                `Is this path correct ${chalk.blue(componentDir)} [y/N] : `,
+            )
             .toLowerCase()[0] !== "y"
     ) {
         Logger.log("Component", name, "not deleted!");
@@ -29,7 +31,9 @@ function deleteComponent(name: string, rootDir: string) {
 }
 
 function main() {
-    let componentName = readline.question("Name of component to delete: ").trim();
+    let componentName = readline
+        .question("Name of component to delete: ")
+        .trim();
     if (componentName.length === 0) {
         Logger.error("Component name cannot be blank!");
         process.exit();
@@ -41,7 +45,8 @@ function main() {
     }
 
     if (config.auto_title) {
-        componentName = componentName.charAt(0).toUpperCase() + componentName.slice(1);
+        componentName =
+            componentName.charAt(0).toUpperCase() + componentName.slice(1);
     }
 
     deleteComponent(componentName, config.components_dir);

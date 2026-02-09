@@ -23,7 +23,9 @@ export default function QRCodeScanner() {
                 </div>
                 <p className="absolute right-2">20 x 20</p>
             </div>
-            <p className="absolute right-2 bottom-0 text-end">Powered by our Smartest AI™</p>
+            <p className="absolute right-2 bottom-0 text-end">
+                Powered by our Smartest AI™
+            </p>
         </div>
     );
 }

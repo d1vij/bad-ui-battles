@@ -26,7 +26,9 @@ export function TermsOfService({ tos }: TermsOfServiceProps) {
     const [count, setCount] = useState(0);
     const elms = words.map((w) => <Checkbox content={w} setCount={setCount} />);
 
-    const [activeModal, setActiveModal] = useState<"success" | "faliure" | undefined>();
+    const [activeModal, setActiveModal] = useState<
+        "success" | "faliure" | undefined
+    >();
 
     function handleSubmit() {
         if (count === maxCount.current) {
@@ -38,29 +40,37 @@ export function TermsOfService({ tos }: TermsOfServiceProps) {
 
     return (
         <div className="relative flex h-full w-full items-center justify-center bg-zinc-100 p-3 font-serif">
-            <div className="mb-20 h-[70%] w-120 rounded-3xl border-2 border-stone-400/80 bg-zinc-300 p-4">
-                {activeModal === "success" && <SuccessModal setActiveModal={setActiveModal} />}
-                {activeModal === "faliure" && <FaliureModal setActiveModal={setActiveModal} />}
+            <div className="mb-10 md:mb-20 h-[90%] md:h-[70%] w-120 rounded-3xl border-2 border-stone-400/80 bg-zinc-300 p-4">
+                {activeModal === "success" && (
+                    <SuccessModal setActiveModal={setActiveModal} />
+                )}
+                {activeModal === "faliure" && (
+                    <FaliureModal setActiveModal={setActiveModal} />
+                )}
 
-                <div
-                    className="flex h-full flex-col rounded-3xl border-2 border-stone-400/10 bg-stone-200 p-2 shadow-xl"
-                >
+                <div className="flex h-full flex-col rounded-3xl border-2 border-stone-400/10 bg-stone-200 p-2 shadow-xl">
                     <h1 className="ml-1 text-3xl font-semibold tracking-tight text-shadow-black md:text-4xl">
                         Terms of Service
                     </h1>
-                    <h2 className="ml-1 text-sm font-medium">Please read the agreement carefully before proceeding</h2>
+                    <h2 className="ml-1 text-sm font-medium">
+                        Please read the agreement carefully before proceeding
+                    </h2>
 
                     {/*tos checkboxes*/}
                     <section
-                        className="flex-1 grow overflow-y-auto rounded bg-white p-2 inset-shadow-sm
+                        className="flex-1 grow overflow-y-auto rounded bg-white p-2 inset-shadow-sm text-sm md:text-base
                             inset-shadow-stone-500/80"
                     >
                         {elms}
                     </section>
 
                     {/*confirmation*/}
-                    <div className="mt-2 **:hover:underline">
-                        <Checkbox content="I agree to the Terms of Service" setCount={setCount} align="before" />
+                    <div className="mt-2 **:hover:underline text-xs md:text-base">
+                        <Checkbox
+                            content="I agree to the Terms of Service"
+                            setCount={setCount}
+                            align="before"
+                        />
                     </div>
                     <button
                         onClick={handleSubmit}
@@ -72,7 +82,9 @@ export function TermsOfService({ tos }: TermsOfServiceProps) {
                 </div>
             </div>
 
-            <p className="absolute bottom-2 left-0 w-full text-center text-sm">© 2025 Some not so evil corp </p>
+            <p className="absolute bottom-2 left-0 w-full text-center text-sm">
+                © 2025 Some not so evil corp{" "}
+            </p>
         </div>
     );
 }
@@ -96,14 +108,17 @@ function Checkbox({ content, setCount, align = "after" }: CheckboxProps) {
 
     const id = useId();
     return (
-        <label htmlFor={id} className="mx-0.5 inline-block cursor-pointer text-center">
+        <label
+            htmlFor={id}
+            className="mx-0.5 inline-flex cursor-pointer text-center items-center"
+        >
             {align === "after" && content}
             <input
                 type="checkbox"
                 onChange={handleClick}
                 checked={checked}
                 id={id}
-                className="mx-1 checked:bg-red-300"
+                className="mx-1 checked:bg-red-300 size-3"
             />
             {align === "before" && content}
         </label>
@@ -127,7 +142,7 @@ function Modal({ title, children, setActiveModal }: AbstractModalProps) {
                 backdrop-blur-xs"
         >
             <div
-                className="flex h-1/3 w-80 items-center justify-center rounded-3xl border-stone-400/80 bg-zinc-300 p-4
+                className="flex h-1/2 md:h-1/3 w-80 items-center justify-center rounded-3xl border-stone-400/80 bg-zinc-300 p-4
                     shadow-sm shadow-stone-400"
             >
                 <div
@@ -138,11 +153,13 @@ function Modal({ title, children, setActiveModal }: AbstractModalProps) {
                         onClick={handleClick}
                         className="absolute top-0 right-0.5 mt-1 flex size-8 cursor-pointer items-center justify-center
                             rounded-4xl border-2 border-zinc-500/20 bg-zinc-300 p-2 px-3 text-lg
-                            inset-shadow-zinc-700/30 active:inset-shadow-sm"
+                            inset-shadow-zinc-700/30 active:inset-shadow-sm "
                     >
                         ⤫
                     </button>
-                    <h1 className="mt-2 mb-3 text-center text-5xl font-semibold uppercase">{title}</h1>
+                    <h1 className="mt-2 mb-3 text-center text-5xl font-semibold uppercase">
+                        {title}
+                    </h1>
                     <div className="text-center text-xl">{children}</div>
                 </div>
             </div>
@@ -157,7 +174,8 @@ type ModalProps = {
 function FaliureModal({ setActiveModal }: ModalProps) {
     return (
         <Modal setActiveModal={setActiveModal} title="faliure">
-            Please acknowledge all the clauses before proceeding !! &nbsp;&nbsp;&nbsp; (˶ᵔ ᵕ ᵔ˶)
+            Please acknowledge all the clauses before proceeding !!
+            &nbsp;&nbsp;&nbsp; (˶ᵔ ᵕ ᵔ˶)
         </Modal>
     );
 }

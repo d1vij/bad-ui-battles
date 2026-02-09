@@ -13,7 +13,11 @@ const keyboardLayout = [
 type KeyboardRowProps = PropsWithChildren;
 
 function KeyboardRow({ children }: KeyboardRowProps) {
-    return <div className="flex w-full grow flex-row items-center justify-center">{children}</div>;
+    return (
+        <div className="flex w-full grow flex-row items-center justify-center">
+            {children}
+        </div>
+    );
 }
 
 type KeyboardKeyProps = {
@@ -54,7 +58,12 @@ export default function KeyBoard({ dispatchInput }: KeyboardProps) {
                     <KeyboardKey
                         key={i}
                         letter={l}
-                        onClick={() => dispatchInput({ type: KeyAction.keypress, letter: l })}
+                        onClick={() =>
+                            dispatchInput({
+                                type: KeyAction.keypress,
+                                letter: l,
+                            })
+                        }
                     />
                 ))}
             </KeyboardRow>
@@ -64,24 +73,40 @@ export default function KeyBoard({ dispatchInput }: KeyboardProps) {
                     <KeyboardKey
                         key={i}
                         letter={l}
-                        onClick={() => dispatchInput({ type: KeyAction.keypress, letter: l })}
+                        onClick={() =>
+                            dispatchInput({
+                                type: KeyAction.keypress,
+                                letter: l,
+                            })
+                        }
                     />
                 ))}
             </KeyboardRow>
 
             <KeyboardRow>
                 {/*Enter Key*/}
-                <KeyboardKey letter="Enter" onClick={() => dispatchInput({ type: KeyAction.enter })} />
+                <KeyboardKey
+                    letter="Enter"
+                    onClick={() => dispatchInput({ type: KeyAction.enter })}
+                />
 
                 {keyboardLayout[2].map((l, i) => (
                     <KeyboardKey
                         key={i}
                         letter={l}
-                        onClick={() => dispatchInput({ type: KeyAction.keypress, letter: l })}
+                        onClick={() =>
+                            dispatchInput({
+                                type: KeyAction.keypress,
+                                letter: l,
+                            })
+                        }
                     />
                 ))}
                 {/*Backspace Key*/}
-                <KeyboardKey letter="⌫" onClick={() => dispatchInput({ type: KeyAction.backspace })} />
+                <KeyboardKey
+                    letter="⌫"
+                    onClick={() => dispatchInput({ type: KeyAction.backspace })}
+                />
             </KeyboardRow>
         </div>
     );

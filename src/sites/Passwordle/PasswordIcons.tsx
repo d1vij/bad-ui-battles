@@ -40,12 +40,16 @@ type PasswordIconsProps = {
     inputtedPassword: string[];
 };
 
-export default function PasswordIcons({ password, inputtedPassword }: PasswordIconsProps) {
+export default function PasswordIcons({
+    password,
+    inputtedPassword,
+}: PasswordIconsProps) {
     const iconElms = [];
 
     const passwordLen = password.length;
     const inputtedPasswordLen = inputtedPassword.length;
-    const range = inputtedPasswordLen > passwordLen ? passwordLen : inputtedPasswordLen;
+    const range =
+        inputtedPasswordLen > passwordLen ? passwordLen : inputtedPasswordLen;
 
     for (let idx = 0; idx < range; idx++) {
         if (password[idx] === inputtedPassword[idx]) {
@@ -63,5 +67,13 @@ export default function PasswordIcons({ password, inputtedPassword }: PasswordIc
         }
     }
 
-    return <div className={"mt-2 mb-10 flex min-h-6 w-[90%] overflow-x-scroll overflow-y-hidden px-3"}>{iconElms}</div>;
+    return (
+        <div
+            className={
+                "mt-2 mb-10 flex min-h-6 w-[90%] overflow-x-scroll overflow-y-hidden px-3"
+            }
+        >
+            {iconElms}
+        </div>
+    );
 }

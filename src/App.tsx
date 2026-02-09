@@ -8,7 +8,9 @@ import SiteLoader from "@/components/SiteLoader";
 import { SiteIndex } from "@/sites";
 
 export default function App() {
-    const [activeSiteId, setActiveSiteId] = useState<string | undefined>(undefined);
+    const [activeSiteId, setActiveSiteId] = useState<string | undefined>(
+        undefined,
+    );
 
     if (activeSiteId === undefined) {
         return <SiteSelection setActiveSite={setActiveSiteId} />;

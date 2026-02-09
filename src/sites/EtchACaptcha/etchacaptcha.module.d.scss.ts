@@ -1,4 +1,4 @@
 declare const classNames: {
-    readonly fall: "fall";
+  readonly shake: "shake";
 };
 export default classNames;
