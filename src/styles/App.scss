@@ -5,12 +5,6 @@
     outline: solid red 1px;
 } */
 
-@each $color in RED, BLUE, GREEN, PINK, YELLOW {
-  .DEBUG_#{$color} {
-    background-color: $color;
-  }
-}
-
 #root {
   min-height: 100dvh;
   height: fit-content;

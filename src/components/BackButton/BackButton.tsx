@@ -1,10 +1,9 @@
-import type { BackButtonProps } from "./types";
-
+import { setHash } from "@/lib";
 import Clickable from "@/components/Clickable";
 
-export default function BackButton({ setActiveSite }: BackButtonProps) {
+export default function BackButton() {
     function handleClick() {
-        setActiveSite(undefined);
+        setHash("");
     }
     return (
         <Clickable handleClick={handleClick}>

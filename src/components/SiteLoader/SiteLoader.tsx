@@ -8,14 +8,14 @@ import { Suspense } from "react";
 import Placeholder from "@/components/Placeholder";
 
 // provides interface to mount and display any arbitrary component(s) within it
-export default function SiteLoader({ site, setActiveSite }: SiteLoaderProps) {
+export default function SiteLoader({ site}: SiteLoaderProps) {
     useWindowTitle(site.title);
 
     // SiteLoader's background is set to bright red, indicating that the embedded component is not utlizing the full available space
     // this could be prevented by using an absolute wrapper around the loaded component, which acts as the background for it
     return (
         <>
-            <BackButton setActiveSite={setActiveSite} />
+            <BackButton />
             <div className="flex h-10 grow flex-col justify-between">
                 <div
                     // Lmao idk why h-1 works here

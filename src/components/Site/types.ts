@@ -1,12 +1,8 @@
-type common = {
+export type SiteProps = {
     id: string;
     title: string;
     description: string;
 };
-export type TSite = common & {
+export type TSite = SiteProps & {
     component: React.FC;
-};
-
-export type SiteProps = common & {
-    setActiveSite: React.Dispatch<React.SetStateAction<string | undefined>>;
 };

@@ -1,16 +1,15 @@
-import type { SiteSelectionProps } from "./types";
 import Site from "@/components/Site";
 import { SiteIndex } from "@/sites";
 import Titlebar from "@/components/Titlebar";
 import Screw from "@/components/Screw";
 import Footer, { FooterCredits, FooterGithubLink } from "@/components/Footer";
 
-export default function SiteSelection({ setActiveSite }: SiteSelectionProps) {
+export default function SiteSelection() {
     const siteElms: React.ReactElement[] = [];
 
-    SiteIndex.forEach((s, id) => {
+    SiteIndex.forEach((s) => {
         siteElms.push(
-            <Site {...s} key={id} id={id} setActiveSite={setActiveSite} />,
+            <Site {...s} key={s.id} id={s.id} />,
         );
     });
 

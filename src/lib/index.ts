@@ -19,3 +19,4 @@
 
 export { generateId } from "./generateId";
 export { gc } from "./generateClassname";
+export {setHash} from "./setHash"

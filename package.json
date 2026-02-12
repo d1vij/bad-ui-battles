@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "biome lint",
+    "lint": "biome lint && tsc -b --noEmit",
     "preview": "vite preview",
     "format": "biome format --write src",
     "deploy": "pnpx wrangler deploy",

@@ -1,5 +1,4 @@
 import React from "react";
-import { generateId } from "@/lib";
 import type { TSite } from "@/components/Site/types";
 
 // import BirthdaySelector from "./BirthdaySelector";
@@ -12,37 +11,37 @@ const Notepad = React.lazy(() => import("./Notepad/"));
 
 const siteInfo: TSite[] = [
     {
-        id: generateId(),
+        id: "birthday-guesser",
         title: "Birthday Guesser",
         description: "Guessing your birthday in \nO(logN) time",
         component: BirthdaySelector,
     },
     {
-        id: generateId(),
+        id: "terms-of-service",
         title: "Terms of Service",
         description: "We ain't take no liability",
         component: TermsOfServiceLoader,
     },
     {
-        id: generateId(),
+        id: "notepad",
         title: "Notepad",
         description: "Guessing your birthday in \nO(logN) time",
         component: Notepad,
     },
     {
-        id: generateId(),
+        id: "etch-a-captcha",
         title: "Etch-A-Captcha",
         description: "Guessing your birthday in \nO(logN) time",
         component: EtchACaptcha,
     },
     {
-        id: generateId(),
+        id: "qr-code-scanner",
         title: "QR Code Scanner",
         description: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         component: QRCodeScanner,
     },
     {
-        id: generateId(),
+        id: "passwordle",
         title: "Passwordle",
         description: "Six tries at once, Once a day",
         component: Passwordle,
@@ -50,5 +49,6 @@ const siteInfo: TSite[] = [
 ];
 
 export const SiteIndex = new Map<string, TSite>(
-    siteInfo.map((s) => [generateId(), s]),
+    siteInfo.map((s) => [s.id, s]),
 );
+console.log(SiteIndex)

@@ -1,15 +1,11 @@
 import Clickable from "@/components/Clickable";
 import type { SiteProps } from "./types";
+import { setHash } from "@/lib";
 
 // site holder for SiteSelection
-export default function Site({
-    description,
-    title,
-    id,
-    setActiveSite,
-}: SiteProps) {
+export default function Site({ description, title, id }: SiteProps) {
     function handleClick() {
-        setActiveSite(id);
+        setHash(id);
     }
     return (
         <Clickable handleClick={handleClick}>
