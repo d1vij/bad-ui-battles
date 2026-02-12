@@ -5,6 +5,7 @@
     "": {
       "name": "bad-ui-battles",
       "dependencies": {
+        "7.css": "^0.21.1",
         "nanoid": "^5.1.6",
         "react": "^19.2.3",
         "react-dom": "^19.2.3",
@@ -38,6 +39,8 @@
     "vite": "npm:rolldown-vite@7.2.5",
   },
   "packages": {
+    "7.css": ["7.css@0.21.1", "", {}, "sha512-Q+/aFUpGemoR/Zltj4a7yvHonyxfb+9cgiwBL+j/Lm+H28EOoLzWoJki7MdGPV+3mLCvKSCVqr3M2x2uNYyeWw=="],
+
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
 
     "@babel/code-frame": ["@babel/code-frame@7.28.6", "", { "dependencies": { "@babel/helper-validator-identifier": "7.28.5", "js-tokens": "4.0.0", "picocolors": "1.1.1" } }, "sha512-JYgintcMjRiCvS8mMECzaEn+m3PfoQiyqukOMCCVQtoJGYJw8j/8LBJEiqkHLkfwCcs74E3pbAUFNg7d9VNJ+Q=="],

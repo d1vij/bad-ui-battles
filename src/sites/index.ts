@@ -8,6 +8,7 @@ const TermsOfServiceLoader = React.lazy(() => import("./TermsOfService"));
 const Passwordle = React.lazy(() => import("./Passwordle/"));
 const QRCodeScanner = React.lazy(() => import("./QRCodeScanner/"));
 const EtchACaptcha = React.lazy(() => import("./EtchACaptcha/"));
+const Notepad = React.lazy(() => import("./Notepad/"));
 
 const siteInfo: TSite[] = [
     {
@@ -21,6 +22,12 @@ const siteInfo: TSite[] = [
         title: "Terms of Service",
         description: "We ain't take no liability",
         component: TermsOfServiceLoader,
+    },
+    {
+        id: generateId(),
+        title: "Notepad",
+        description: "Guessing your birthday in \nO(logN) time",
+        component: Notepad,
     },
     {
         id: generateId(),

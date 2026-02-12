@@ -7,7 +7,8 @@ export function FooterGithubLink() {
             <a
                 className="hover:underline"
                 href="https://github.com/d1vij/"
-                target="_blank" rel="noopener"
+                target="_blank"
+                rel="noopener"
             >
                 d1vij
             </a>
@@ -24,7 +25,8 @@ export function FooterCredits() {
             <a
                 className="ml-2 cursor-help underline"
                 href="https://www.reddit.com/r/badUIbattles/"
-                target="_blank" rel="noopener"
+                target="_blank"
+                rel="noopener"
             >
                 r/badUIbattles
             </a>

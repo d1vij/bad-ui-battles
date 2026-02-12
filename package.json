@@ -15,6 +15,7 @@
     "delete": "tsx dev/deleteComponent.ts"
   },
   "dependencies": {
+    "7.css": "^0.21.1",
     "nanoid": "^5.1.6",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
