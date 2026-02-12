@@ -8,7 +8,7 @@ import { Suspense } from "react";
 import Placeholder from "@/components/Placeholder";
 
 // provides interface to mount and display any arbitrary component(s) within it
-export default function SiteLoader({ site}: SiteLoaderProps) {
+export default function SiteLoader({ site }: SiteLoaderProps) {
     useWindowTitle(site.title);
 
     // SiteLoader's background is set to bright red, indicating that the embedded component is not utlizing the full available space

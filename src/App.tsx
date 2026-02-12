@@ -46,7 +46,20 @@ export default function App() {
         console.log(site);
 
         if (site === undefined) {
-            return <div>Component not found</div>;
+            return (
+                <div className="absolute flex justify-center items-center size-full flex-col">
+                    <span className="text-center bg-pop-yellow">
+                        ~( ´·︵·` )~
+                    </span>
+                    <button
+                        type="button"
+                        className="cursor-pointer hover:underline decoration-2"
+                        onClick={() => setHash("")}
+                    >
+                        Go Back
+                    </button>
+                </div>
+            );
         }
         return <SiteLoader site={site} />;
     }
