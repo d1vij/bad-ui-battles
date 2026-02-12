@@ -1,7 +1,6 @@
 import Site from "@/components/Site";
 import { SiteIndex } from "@/sites";
 import Titlebar from "@/components/Titlebar";
-import Screw from "@/components/Screw";
 import Footer, { FooterCredits, FooterGithubLink } from "@/components/Footer";
 
 export default function SiteSelection() {
@@ -15,7 +14,7 @@ export default function SiteSelection() {
 
     return (
         <>
-            <Screw className="absolute top-4 right-4" />
+            {/*<Screw className="absolute top-4 right-4" />*/}
             <Titlebar title="bad UI battles" />
             <div className="flex h-full grow flex-col justify-between">
                 <div
