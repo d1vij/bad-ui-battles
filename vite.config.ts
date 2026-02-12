@@ -10,8 +10,19 @@ export default defineConfig(({ mode }) => ({
         allowedHosts: true,
     },
     base: mode === "production" ? "/bad-ui-battles" : "/",
+    css: {
+        devSourcemap: true,
+    },
     build: {
         license: true,
+        minify: "oxc",
+        cssMinify: "lightningcss",
+        rolldownOptions: {
+            optimization: {
+                inlineConst: { mode: "all", pass: 1 },
+            },
+            treeshake: true,
+        },
     },
     resolve: {
         alias: {

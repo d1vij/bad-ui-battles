@@ -29,10 +29,6 @@ const INSERT_CHARS =
 function Notepad() {
     const { text, ref } = useTextAreaContext();
 
-    const insertCharElms = INSERT_CHARS.map((c) => (
-        <InsertKey char={c} key={c} />
-    ));
-
     useEffect(() => {
         const elm = ref.current;
         if (elm === null) return;
@@ -65,41 +61,7 @@ function Notepad() {
                 </section>
                 {/* window body */}
                 <section className={gc("window-body", "grow flex flex-col")}>
-                    <Menubar>
-                        <MenuItem hasPopup={true}>
-                            File
-                            <Menu>
-                                <MenuItem label="" hasPopup={false}>
-                                    <a href="https://youtube.com">Save</a>
-                                </MenuItem>
-                                <MenuItem>Open</MenuItem>
-                                <MenuItem>Close</MenuItem>
-                            </Menu>
-                        </MenuItem>
-                        <MenuItem label="Edit">
-                            <Menu>
-                                <MenuItem label="Insert">
-                                    <Menu className="overflow-scroll h-90">
-                                        {insertCharElms}
-                                    </Menu>
-                                </MenuItem>
-                                <MenuItem label="Move">
-                                    <Menu>
-                                        <MoveKey towards="Up" />
-                                        <MoveKey towards="Down" />
-                                        <MoveKey towards="Left" />
-                                        <MoveKey towards="Right" />
-                                    </Menu>
-                                </MenuItem>
-
-                                <BackspaceKey />
-                                <EnterKey />
-                                <MenuItem label="Insert"></MenuItem>
-                            </Menu>
-                        </MenuItem>
-                        <MenuItem label="Help"></MenuItem>
-                    </Menubar>
-
+                    <MenuBarButtons />
                     <textarea
                         value={text}
                         ref={ref}
@@ -114,5 +76,49 @@ function Notepad() {
                 </section>
             </section>
         </section>
+    );
+}
+
+function MenuBarButtons() {
+    const insertCharElms = INSERT_CHARS.map((c) => (
+        <InsertKey char={c} key={c} />
+    ));
+
+    return (
+        <Menubar>
+            <MenuItem hasPopup={true}>
+                File
+                <Menu>
+                    <MenuItem label="" hasPopup={false}>
+                        <a href="https://youtube.com">Save</a>
+                    </MenuItem>
+                    <MenuItem>Open</MenuItem>
+                    <MenuItem>Close</MenuItem>
+                </Menu>
+            </MenuItem>
+            <MenuItem label="Edit">
+                <Menu>
+                    <MenuItem label="Insert">
+                        <Menu className="overflow-scroll h-90">
+                            {insertCharElms}
+                        </Menu>
+                    </MenuItem>
+                    <MenuItem label="Move">
+                        <Menu>
+                            <MoveKey towards="Up" />
+                            <MoveKey towards="Down" />
+                            {/*TODO: Implement*/}
+                            {/*<MoveKey towards="Left" />
+                            <MoveKey towards="Right" />*/}
+                        </Menu>
+                    </MenuItem>
+
+                    <BackspaceKey />
+                    <EnterKey />
+                    <MenuItem label="Insert"></MenuItem>
+                </Menu>
+            </MenuItem>
+            <MenuItem label="Help"></MenuItem>
+        </Menubar>
     );
 }

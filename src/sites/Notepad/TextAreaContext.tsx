@@ -101,6 +101,13 @@ export function useTextAreaContext() {
                 } else {
                     elm.setSelectionRange(start + count, start + count);
                 }
+                break;
+            }
+            case "Up": {
+                break;
+            }
+            case "Down": {
+                break;
             }
         }
 

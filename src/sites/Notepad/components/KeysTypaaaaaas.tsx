@@ -12,7 +12,6 @@ export function InsertKey({ char }: InsertKeyProps) {
     function handleCLick() {
         vibrator(50);
         appendChars(char);
-
     }
 
     return (
@@ -30,7 +29,7 @@ export function BackspaceKey() {
 
     function handleCLick() {
         vibrator(50);
-        deleteChars(1, "left");
+        deleteChars(1, "Left");
     }
 
     return (
@@ -48,7 +47,7 @@ export function EnterKey() {
 
     function handleCLick() {
         vibrator(50);
-        appendChars('\n')
+        appendChars("\n");
     }
 
     return (
@@ -61,11 +60,11 @@ export function EnterKey() {
 }
 
 type MoveKeyProps = {
-    towards: Direction
+    towards: Direction;
 };
-export function MoveKey({ towards}: MoveKeyProps) {
+export function MoveKey({ towards }: MoveKeyProps) {
     const vibrator = useVibrate();
-    const { moveCaret} = useTextAreaContext();
+    const { moveCaret } = useTextAreaContext();
 
     function handleCLick() {
         vibrator(50);
