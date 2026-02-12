@@ -6,7 +6,7 @@ import SiteSelection from "@/components/SiteSelection";
 import SiteLoader from "@/components/SiteLoader";
 
 import { SiteIndex } from "@/sites";
-import { setHash } from "./lib";
+import { setHash } from "@/lib";
 
 export default function App() {
     const [activeSiteId, setActiveSiteId] = useState<string | undefined>(
