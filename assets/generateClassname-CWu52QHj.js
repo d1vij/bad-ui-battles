@@ -1,0 +1,1 @@
+function e(...e){return e.join(` `)}export{e as t};
