@@ -1,4 +1,4 @@
-import { useRef, useState, useLayoutEffect, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export function Caret({
     containerRef,
@@ -13,7 +13,7 @@ export function Caret({
         charsPerLine: 0,
     });
 
-    const [position, setPosition] = useState(80);
+    const [position, _] = useState(80);
     const [isVisible, setIsVisible] = useState(true);
 
     // no responsiveness, pls dont change dimensions client side
