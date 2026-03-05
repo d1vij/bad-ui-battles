@@ -41,9 +41,7 @@ export default function App() {
     if (activeSiteId === undefined) {
         return <SiteSelection />;
     } else {
-        console.log(activeSiteId);
         const site = SiteIndex.get(activeSiteId.slice(1));
-        console.log(site);
 
         if (site === undefined) {
             return (

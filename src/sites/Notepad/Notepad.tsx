@@ -12,6 +12,7 @@ import {
     MoveKey,
 } from "./components/KeysTypaaaaaas";
 import { useEffect } from "react";
+import { Caret } from "./components/Caret";
 
 export default function NotepadWrapper() {
     return (
@@ -22,7 +23,7 @@ export default function NotepadWrapper() {
 }
 
 const INSERT_CHARS =
-    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+{}|:"<>?/\\|~`'.split(
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+{}|:"<>?/\\~`'.split(
         "",
     );
 
@@ -62,17 +63,20 @@ function Notepad() {
                 {/* window body */}
                 <section className={gc("window-body", "grow flex flex-col")}>
                     <MenuBarButtons />
-                    <textarea
-                        value={text}
-                        ref={ref}
-                        className="resize-none size-full grow"
-                        onBeforeInput={(e) => e.preventDefault()}
-                        onBlur={(e) => e.target.focus()}
-                        onClick={(e) => e.preventDefault()}
-                        onDrop={(e) => e.preventDefault()}
-                        onPaste={(e) => e.preventDefault()}
-                        onKeyDown={(e) => e.preventDefault()}
-                    ></textarea>
+                    <div className="grow">
+                        <Caret containerRef={ref} />
+                        <textarea
+                            readOnly={true}
+                            value={text}
+                            ref={ref}
+                            spellCheck={false}
+                            className="resize-none size-full grow"
+                            onBeforeInput={(e) => e.preventDefault()}
+                            onDrop={(e) => e.preventDefault()}
+                            onPaste={(e) => e.preventDefault()}
+                            onKeyDown={(e) => e.preventDefault()}
+                        ></textarea>
+                    </div>
                 </section>
             </section>
         </section>

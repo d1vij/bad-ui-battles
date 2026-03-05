@@ -51,4 +51,3 @@ const siteInfo: TSite[] = [
 export const SiteIndex = new Map<string, TSite>(
     siteInfo.map((s) => [s.id, s]),
 );
-console.log(SiteIndex)
